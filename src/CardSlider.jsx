@@ -3,12 +3,13 @@ import { useState } from "react";
 export const CardSlider = () => {
   const [currentSlider, setCurrentSlider] = useState(1);
   const sliderImages = [
-    { img: "https://source.unsplash.com/600x600/?Villa", text: "Villa", discount: "20% Off", title: "Luxury Villa", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", price: "$1000/day" },
-    { img: "https://source.unsplash.com/600x600/?Mansion", text: "Mansion", discount: "15% Off", title: "Grand Mansion", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", price: "$1500/day" },
-    { img: "https://source.unsplash.com/600x600/?House", text: "House", discount: "10% Off", title: "Cozy House", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", price: "$500/day" },
-    { img: "https://source.unsplash.com/600x600/?Cottage", text: "Cottage", discount: "25% Off", title: "Quaint Cottage", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", price: "$300/day" },
-    { img: "https://source.unsplash.com/600x600/?Bungalow", text: "Bungalow", discount: "30% Off", title: "Beach Bungalow", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", price: "$800/day" },
-  ];
+    { img: "https://source.unsplash.com/600x600/?Villa", text: "Villa", discount: "20% Off", title: "Luxury Villa", description: "Experience luxury with breathtaking views.", price: "$1000/day" },
+    { img: "https://source.unsplash.com/600x600/?Mansion", text: "Mansion", discount: "15% Off", title: "Grand Mansion", description: "Opulent mansion for grand events.", price: "$1500/day" },
+    { img: "https://source.unsplash.com/600x600/?House", text: "House", discount: "10% Off", title: "Cozy House", description: "Modern amenities in a cozy setting.", price: "$500/day" },
+    { img: "https://source.unsplash.com/600x600/?Cottage", text: "Cottage", discount: "25% Off", title: "Quaint Cottage", description: "Charming retreat surrounded by nature.", price: "$300/day" },
+    { img: "https://source.unsplash.com/600x600/?Bungalow", text: "Bungalow", discount: "30% Off", title: "Beach Bungalow", description: "Laid-back luxury with ocean views.", price: "$800/day" },
+];
+
 
   const prevSlider = () =>
     setCurrentSlider((currentSlider) =>
