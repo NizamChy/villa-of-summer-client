@@ -132,29 +132,25 @@ const Home = () => {
           </div>
           {/* input field end */}
 
-          <div>
-            {/* type - animation  */}
-            <div className="mt-4 p-4 text-xs lg:text-sm text-center lg:text-left lg:font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black via-black to-black lg:pl-0">
-              <TypeAnimation
-                preRenderFirstString={true}
-                sequence={[
-                  500,
-                  "  Villa Of Summer Firsatlan",
-                  1000,
-                  " Villa Of Summer Firsatlan",
-                  1000,
-                  " Villa Of Summer Firsatlan",
-                  500,
-                ]}
-                speed={50}
-                style={{
-                  fontSize: "2em",
-                  "@media (maxWidth: 640px)": { fontSize: "2em" },
-                }}
-                repeat={1}
-              />
-            </div>
-            {/* type - animation end */}
+          <div className="mt-4 p-4 text-xs lg:text-sm text-center lg:text-left lg:font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black via-black to-black lg:pl-0">
+            <TypeAnimation
+              preRenderFirstString={true}
+              sequence={[
+                500,
+                "  Villa Of Summer Firsatlan",
+                1000,
+                " Villa Of Summer Firsatlan",
+                1000,
+                " Villa Of Summer Firsatlan",
+                500,
+              ]}
+              speed={50}
+              style={{
+                fontSize: "2em",
+                "@media (maxWidth: 640px)": { fontSize: "2em" },
+              }}
+              repeat={1}
+            />
           </div>
 
           <CardSlider />

@@ -1,57 +1,16 @@
 import { useState } from "react";
+import { SLIDER_IMAGES } from "./utils/constants";
 
 export const CardSlider = () => {
   const [currentSlider, setCurrentSlider] = useState(1);
-  const sliderImages = [
-    {
-      img: "https://source.unsplash.com/600x600/?Villa",
-      text: "Villa",
-      discount: "20% Off",
-      title: "Luxury Villa",
-      description: "Experience luxury with breathtaking views.",
-      price: "$1000/day",
-    },
-    {
-      img: "https://source.unsplash.com/600x600/?Mansion",
-      text: "Mansion",
-      discount: "15% Off",
-      title: "Grand Mansion",
-      description: "Opulent mansion for grand events.",
-      price: "$1500/day",
-    },
-    {
-      img: "https://source.unsplash.com/600x600/?House",
-      text: "House",
-      discount: "10% Off",
-      title: "Cozy House",
-      description: "Modern amenities in a cozy setting.",
-      price: "$500/day",
-    },
-    {
-      img: "https://source.unsplash.com/600x600/?Cottage",
-      text: "Cottage",
-      discount: "25% Off",
-      title: "Quaint Cottage",
-      description: "Charming retreat surrounded by nature.",
-      price: "$300/day",
-    },
-    {
-      img: "https://source.unsplash.com/600x600/?Bungalow",
-      text: "Bungalow",
-      discount: "30% Off",
-      title: "Beach Bungalow",
-      description: "Laid-back luxury with ocean views.",
-      price: "$800/day",
-    },
-  ];
 
   const prevSlider = () =>
     setCurrentSlider((currentSlider) =>
-      currentSlider === 0 ? sliderImages.length - 1 : currentSlider - 1
+      currentSlider === 0 ? SLIDER_IMAGES.length - 1 : currentSlider - 1
     );
   const nextSlider = () =>
     setCurrentSlider((currentSlider) =>
-      currentSlider === sliderImages.length - 1 ? 0 : currentSlider + 1
+      currentSlider === SLIDER_IMAGES.length - 1 ? 0 : currentSlider + 1
     );
 
   return (
@@ -113,7 +72,7 @@ export const CardSlider = () => {
         className="h-[540px] md:h-[360px] w-2/3 ml-auto relative ease-linear duration-300 flex items-center"
         style={{ transform: `translateX(-${currentSlider * 50}%)` }}
       >
-        {sliderImages.map((slide, inx) => (
+        {SLIDER_IMAGES.map((slide, inx) => (
           <div
             key={inx}
             className={`${
