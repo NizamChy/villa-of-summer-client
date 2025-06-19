@@ -3,13 +3,47 @@ import { useState } from "react";
 export const CardSlider = () => {
   const [currentSlider, setCurrentSlider] = useState(1);
   const sliderImages = [
-    { img: "https://source.unsplash.com/600x600/?Villa", text: "Villa", discount: "20% Off", title: "Luxury Villa", description: "Experience luxury with breathtaking views.", price: "$1000/day" },
-    { img: "https://source.unsplash.com/600x600/?Mansion", text: "Mansion", discount: "15% Off", title: "Grand Mansion", description: "Opulent mansion for grand events.", price: "$1500/day" },
-    { img: "https://source.unsplash.com/600x600/?House", text: "House", discount: "10% Off", title: "Cozy House", description: "Modern amenities in a cozy setting.", price: "$500/day" },
-    { img: "https://source.unsplash.com/600x600/?Cottage", text: "Cottage", discount: "25% Off", title: "Quaint Cottage", description: "Charming retreat surrounded by nature.", price: "$300/day" },
-    { img: "https://source.unsplash.com/600x600/?Bungalow", text: "Bungalow", discount: "30% Off", title: "Beach Bungalow", description: "Laid-back luxury with ocean views.", price: "$800/day" },
-];
-
+    {
+      img: "https://source.unsplash.com/600x600/?Villa",
+      text: "Villa",
+      discount: "20% Off",
+      title: "Luxury Villa",
+      description: "Experience luxury with breathtaking views.",
+      price: "$1000/day",
+    },
+    {
+      img: "https://source.unsplash.com/600x600/?Mansion",
+      text: "Mansion",
+      discount: "15% Off",
+      title: "Grand Mansion",
+      description: "Opulent mansion for grand events.",
+      price: "$1500/day",
+    },
+    {
+      img: "https://source.unsplash.com/600x600/?House",
+      text: "House",
+      discount: "10% Off",
+      title: "Cozy House",
+      description: "Modern amenities in a cozy setting.",
+      price: "$500/day",
+    },
+    {
+      img: "https://source.unsplash.com/600x600/?Cottage",
+      text: "Cottage",
+      discount: "25% Off",
+      title: "Quaint Cottage",
+      description: "Charming retreat surrounded by nature.",
+      price: "$300/day",
+    },
+    {
+      img: "https://source.unsplash.com/600x600/?Bungalow",
+      text: "Bungalow",
+      discount: "30% Off",
+      title: "Beach Bungalow",
+      description: "Laid-back luxury with ocean views.",
+      price: "$800/day",
+    },
+  ];
 
   const prevSlider = () =>
     setCurrentSlider((currentSlider) =>
@@ -21,9 +55,8 @@ export const CardSlider = () => {
     );
 
   return (
-    <div className=" max-w-6xl mx-auto h-auto md:h-auto flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative">
+    <div className="max-w-6xl mx-auto h-auto md:h-auto flex flex-col xl:flex-row items-center overflow-hidden gap-5 lg:gap-10 relative">
       <div className="absolute w-full h-full flex items-center justify-between z-50 px-5">
-
         <button
           onClick={prevSlider}
           className="flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8"
@@ -48,7 +81,7 @@ export const CardSlider = () => {
             </g>
           </svg>
         </button>
- 
+
         <button
           onClick={nextSlider}
           className="flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8"
@@ -80,7 +113,6 @@ export const CardSlider = () => {
         className="h-[540px] md:h-[360px] w-2/3 ml-auto relative ease-linear duration-300 flex items-center"
         style={{ transform: `translateX(-${currentSlider * 50}%)` }}
       >
-
         {sliderImages.map((slide, inx) => (
           <div
             key={inx}

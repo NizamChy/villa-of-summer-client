@@ -1,25 +1,24 @@
-import logo from "../src/assets/resources/logo.png";
-import { CgMenuLeft } from "react-icons/cg";
-import bgImg from "../src/assets/resources/bg.png";
-import circle from "../src/assets/resources/circle.png";
-import earth from "../src/assets/resources/earth.png";
-import { CardSlider } from "./CardSlider";
-import { TypeAnimation } from "react-type-animation";
-import { GrLocation } from "react-icons/gr";
 import { GoPeople } from "react-icons/go";
+import { GrSearch } from "react-icons/gr";
+import { CardSlider } from "./CardSlider";
+import { FaRegMap } from "react-icons/fa6";
 import { LuCalendar } from "react-icons/lu";
-import sky1 from "../src/assets/resources/sky1.png";
-import sky2 from "../src/assets/resources/sky2.png";
+import { CgMenuLeft } from "react-icons/cg";
+import { GrLocation } from "react-icons/gr";
 import { useState, useEffect } from "react";
 import { GiFamilyHouse } from "react-icons/gi";
+import bgImg from "../src/assets/resources/bg.png";
+import sky2 from "../src/assets/resources/sky2.png";
+import sky1 from "../src/assets/resources/sky1.png";
+import logo from "../src/assets/resources/logo.png";
+import { TypeAnimation } from "react-type-animation";
+import earth from "../src/assets/resources/earth.png";
 import { HiMiniBuildingOffice } from "react-icons/hi2";
-import { FaRegMap } from "react-icons/fa6";
-import { GrSearch } from "react-icons/gr";
+import circle from "../src/assets/resources/circle.png";
 
 const Home = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
   const [hovered, setHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleHover = () => {
     setHovered(true);
@@ -38,19 +37,17 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="mx-20 my-5 ">
+    <div className="mx-20 my-5">
       <div className="md:grid grid-cols-1 lg:flex justify-center">
-        <div className="w-[55%]  min-h-[80vh] rounded-s-xl">
+        <div className="w-[55%] min-h-[80vh] rounded-s-xl">
           <div className="flex">
             <div className="text-3xl m-5 text-[#1D4E67]">
               <CgMenuLeft />
             </div>
             <div className="mx-auto">
-              <img className="w-36 mt-3" src={logo} alt="" />
+              <img className="w-36 mt-3" src={logo} alt="logo" />
             </div>
           </div>
-          {/* 55 % */}
-          {/* <div>Villalar</div> */}
 
           <div className="flex justify-start w-[50%] mt-8">
             <div className="bg-gray-100 w-16 h-16 my-2 animate-grow rounded-tr-3xl">
@@ -75,9 +72,9 @@ const Home = () => {
           </div>
 
           {/* input field  */}
-          <div className="border-b-2 pb-4 w-[80%] rounded-e-full ">
+          <div className="border-b-2 pb-4 w-[80%] rounded-e-full">
             <label className="sr-only">Label</label>
-            <div className="flex rounded-e-full ">
+            <div className="flex rounded-e-full">
               <button
                 type="button"
                 className="buttn buttn1 rounded-s-md border relative"
@@ -87,7 +84,7 @@ const Home = () => {
                 <span className="bg-[#1D4E67] py-6 px-5 text-white rounded-full absolute -left-4 -top-1 text-2xl">
                   {hovered ? <GrSearch /> : <GrLocation />}
                 </span>
-                <span className="relative ml-10 ">
+                <span className="relative ml-10">
                   {hovered
                     ? "Nereye Bir  sehir ara...."
                     : "Nereye Gidiyorsunuz?"}
@@ -96,9 +93,8 @@ const Home = () => {
 
               <button
                 type="button"
-                className=" -me-px py-3 px-4 inline-flex justify-center items-center gap-2 border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-[#1D4E67] transition-all text-sm hover:text-white"
+                className="-me-px py-3 px-4 inline-flex justify-center items-center gap-2 border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-[#1D4E67] transition-all text-sm hover:text-white"
               >
-                {" "}
                 <span className="flex flex-col">
                   <span>Check-in</span>
 
@@ -113,9 +109,8 @@ const Home = () => {
 
               <button
                 type="button"
-                className=" -me-px py-3 px-4 inline-flex justify-center items-center gap-2 border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-[#1D4E67] hover:text-white transition-all text-sm "
+                className="-me-px py-3 px-4 inline-flex justify-center items-center gap-2 border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-[#1D4E67] hover:text-white transition-all text-sm "
               >
-                {" "}
                 <span className="flex flex-col">
                   <span>Check-out</span>
                   <span>.. / .. / ..</span>
@@ -126,7 +121,6 @@ const Home = () => {
                 type="button"
                 className="rounded-e-full -me-px py-3 px-4 inline-flex justify-center items-center gap-2 border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-[#1D4E67] hover:text-white transition-all text-sm "
               >
-                {" "}
                 <span className="flex gap-2">
                   <span className="text-lg">
                     <GoPeople />
@@ -145,7 +139,7 @@ const Home = () => {
                 preRenderFirstString={true}
                 sequence={[
                   500,
-                  "  Villa Of Summer Firsatlan", // initially rendered starting point
+                  "  Villa Of Summer Firsatlan",
                   1000,
                   " Villa Of Summer Firsatlan",
                   1000,
@@ -163,25 +157,21 @@ const Home = () => {
             {/* type - animation end */}
           </div>
 
-          <div className="">
-            <CardSlider></CardSlider>
-          </div>
+          <CardSlider />
         </div>
 
         {/* second section start  */}
 
-        <div className="w-[45%]  ">
+        <div className="w-[45%]">
           <div
-            className="  min-h-[96vh] rounded-e-xl"
+            className="h-full rounded-e-xl"
             style={{
               backgroundImage: `url(${bgImg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            <div className="flex justify-center items-center h-full overflow-hidden">
-              {/* <div>45%</div> */}
-
+            <div className="flex justify-center items-center h-full overflow-hidden relative">
               <div>
                 {isVisible && (
                   <button
@@ -197,7 +187,7 @@ const Home = () => {
               <div>
                 {isVisible && (
                   <button
-                    className="btn w-32 bg-white absolute ml-[29%] bottom-[24%] flex flex-col"
+                    className="btn w-32 bg-white absolute right-10 bottom-[24%] flex flex-col"
                     style={{ zIndex: 6 }}
                   >
                     <span className="text-gray-500">Time To</span>
@@ -210,29 +200,29 @@ const Home = () => {
                 className="absolute w-64 top-0 mr-64 animate-left-up-right-bottom"
                 style={{ zIndex: 3 }}
               >
-                <img src={sky1} alt="" />
+                <img src={sky1} alt="sky1" />
               </div>
 
               <div
-                className="absolute w-64 top-0 ml-64 animate-left-up-right-bottom "
+                className="absolute w-64 top-0 ml-64 animate-left-up-right-bottom"
                 style={{ zIndex: 4 }}
               >
-                <img src={sky2} alt="" />
+                <img src={sky2} alt="sky2" />
               </div>
 
-              <div className=" rounded-full">
+              <div className="rounded-full">
                 <img
-                  className="w-[80%]  rounded-full mx-auto my-auto animate-spin-custom mt-32"
+                  className="w-[80%] rounded-full mx-auto my-auto animate-spin-custom mt-32"
                   src={earth}
-                  alt=""
+                  alt="earth"
                 />
               </div>
               <div className="absolute scale-125">
                 <img
-                  className="animate-spin-custom mt-32 "
+                  className="animate-spin-custom mt-32"
                   style={{ zIndex: 2 }}
                   src={circle}
-                  alt=""
+                  alt="circle"
                 />
               </div>
             </div>
