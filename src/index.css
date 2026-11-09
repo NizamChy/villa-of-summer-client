@@ -2,111 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  overflow: hidden;
-  /* background-color: #E6EBF5; */
-}
-
-@keyframes spin-custom {
-  0% {
-    transform: rotate(0deg);
+@layer components {
+  /* City search: a brand-colored fill sweeps in from the left on hover/focus. */
+  .search-trigger::before {
+    @apply absolute inset-0 -z-10 origin-left scale-x-0 bg-brand content-[''];
+    transition: transform 1s cubic-bezier(0.5, 1.6, 0.4, 0.7);
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.animate-spin-custom {
-  animation: spin-custom 35s linear infinite;
-}
 
-.border-double {
-  border-style: double;
-}
-
-.middle {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  text-align: center;
-  transform: translate(-50%, -50%);
-}
-.buttn {
-  cursor: pointer;
-  background: none;
-  min-width: 200px;
-  padding: 12px 20px;
-  position: relative;
-  transition: color 0.4s linear;
-}
-
-.buttn:hover {
-  color: #fff;
-}
-
-.buttn::before {
-  top: 0;
-  left: 0;
-  z-index: -1;
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: #1d4e67;
-  transform-origin: 0 0;
-  transition: transform 1s;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-}
-
-.buttn1::before {
-  transform: scaleX(0);
-}
-.buttn1:hover::before {
-  transform: scaleX(1);
-}
-
-.animate-left-up-right-bottom {
-  animation: leftUpRightBottomAnim 6s infinite alternate,
-    bottomUpRightBottomAnim 6s infinite alternate;
-}
-
-@keyframes leftUpRightBottomAnim {
-  0%,
-  100% {
-    transform: translate(-10px, -10px);
-  }
-  33% {
-    transform: translate(10px, 10px);
-  }
-  66% {
-    transform: translate(-10px, 10px);
+  .search-trigger:hover::before,
+  .search-trigger:focus-within::before {
+    @apply scale-x-100;
   }
 }
 
-@keyframes bottomUpRightBottomAnim {
-  0%,
-  100% {
-    transform: translate(-10px, 10px);
-  }
-  33% {
-    transform: translate(10px, -10px);
-  }
-  66% {
-    transform: translate(10px, 10px);
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes grow {
-  0% {
-    width: 4rem;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  33% {
-    width: 10rem;
-  }
-  100% {
-    width: 16rem;
-  }
-}
-
-.animate-grow {
-  animation: grow 7s ease-in-out infinite;
 }
