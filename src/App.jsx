@@ -1,11 +1,9 @@
-import Home from "./Home";
+import Home from "./pages/Home";
 
-function App() {
-  return (
-    <div className="max-w-screen-2xl mx-auto overflow-hidden overflow-x-hidden">
-      <Home />
-    </div>
-  );
-}
+const App = () => (
+  <main className="flex min-h-screen items-center justify-center bg-page p-4 md:p-8">
+    <Home />
+  </main>
+);
 
 export default App;
